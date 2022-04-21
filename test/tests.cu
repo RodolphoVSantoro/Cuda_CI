@@ -16,8 +16,9 @@ TEST_CASE("Ex1", "[example]")
     cudaMemcpy(d_v2, v2, 2*sizeof(int), cudaMemcpyHostToDevice);
     soma<<<2,1>>>(2,d_v1,d_v2);
     cudaMemcpy(v3, d_v2, 2*sizeof(int), cudaMemcpyDeviceToHost);
-    for(int i=0;i<2;i++)
+    for(int i=0;i<2;i++){
         REQUIRE(v3[i]==v1[i]+v2[i]);
+    }
     cudaFree(d_v1);
     cudaFree(d_v2);
 }

@@ -1,0 +1,10 @@
+all:
+	cl /c src/main.cpp
+	cl /c src/lib.cpp
+	cl /c test/tests.cpp
+	link main.obj lib.obj
+	link tests.obj lib.obj
+run_test:
+	./tests
+clean:
+	$(RM) main tests lib.obj tests.obj main.obj

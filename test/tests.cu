@@ -2,7 +2,7 @@
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-
+#include <stdio.h>
 #include "../src/lib.h"
 
 #define HANDLE_ERROR(status) { cudaEvalStatus((status),__FILE__,__LINE__); }
@@ -30,6 +30,7 @@ TEST_CASE("Ex1", "[example]")
     soma<<<2,1>>>(2,d_v1,d_v2);
     cudaMemcpy(v3, d_v2, 2*sizeof(int), cudaMemcpyDeviceToHost);
     for(int i=0;i<2;i++){
+        printf("%d: %d==%d+%d\n", i, v3[i], v1[i], v2[i]);
         REQUIRE(v3[i]==v1[i]+v2[i]);
     }
     cudaFree(d_v1);

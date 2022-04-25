@@ -1,9 +1,7 @@
 all:
-	cl /c src/main.cpp
-	cl /c src/lib.cpp
-	cl /c test/tests.cpp
-	link main.obj lib.obj
-	link tests.obj lib.obj
+	nvcc -c src/lib.cu
+	nvcc lib.obj test/tests.cpp -o tests
+	nvcc src/main.cpp lib.obj -o exe
 run_test:
 	./tests
 clean:

@@ -17,7 +17,9 @@ static inline void cudaEvalStatus(cudaError_t status, const char * filename, uns
 
 TEST_CASE("Ex1", "[example]")
 {
-    int *d_v1, *d_v2;    v1 = (int*)malloc(sizeof(int)*2);
+    int *d_v1, *d_v2;    
+    int *v1, *v2, *v3;
+    v1 = (int*)malloc(sizeof(int)*2);
     v2 = (int*)malloc(sizeof(int)*2);
     v3 = (int*)malloc(sizeof(int)*2);
     v1[0]=v1[1]=1;

@@ -18,6 +18,8 @@ jobs:
       id: cuda-toolkit
       with:
         cuda: '10.1.243'
+    - name: vers
+      run: nvcc -V
     - name: make
       if: ${{ matrix.os == 'ubuntu-latest' }}
       run: make -f makeLinux

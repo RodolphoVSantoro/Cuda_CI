@@ -1,7 +1,7 @@
 all:
 	cl /c src/main.cpp
 	nvcc -c src/lib.cu
-	cl /c test/tests.cpp
+	nvcc -c test/tests.cu
 	link main.obj lib.obj
 	link tests.obj lib.obj
 run_test:

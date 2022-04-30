@@ -19,8 +19,7 @@ TEST_CASE("Ex1", "[example]")
 {
     int ver;
     cudaDriverGetVersion(&ver);
-    int major = ver/1000;
-    printf("%d.%d\n", major, ver-major*1000);
+    printf("%d\n", ver);
     int *d_v1, *d_v2;    
     int *v1, *v2, *v3;
     v1 = (int*)malloc(sizeof(int)*2);

@@ -17,7 +17,10 @@ static inline void cudaEvalStatus(cudaError_t status, const char * filename, uns
 
 TEST_CASE("Ex1", "[example]")
 {
-    cudaDriverGetVersion();
+    int ver;
+    cudaDriverGetVersion(&ver);
+    int major = ver/1000;
+    printf("%d.%d\n", major, ver-major*1000);
     int *d_v1, *d_v2;    
     int *v1, *v2, *v3;
     v1 = (int*)malloc(sizeof(int)*2);

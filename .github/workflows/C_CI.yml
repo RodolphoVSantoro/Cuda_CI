@@ -17,6 +17,7 @@ jobs:
     - name: install driver
       if: ${{ matrix.os == 'ubuntu-latest' }}
       run: |
+        sudo apt-get install ubuntu-drivers-common
         sudo add-apt-repository ppa:graphics-drivers/ppa
         sudo apt update
         sudo apt upgrade

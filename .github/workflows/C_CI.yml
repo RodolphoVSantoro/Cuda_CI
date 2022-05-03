@@ -14,15 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: ilammy/msvc-dev-cmd@v1
-    - name: install driver
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: |
-        sudo apt-get install ubuntu-drivers-common
-        sudo add-apt-repository ppa:graphics-drivers/ppa
-        sudo apt update
-        sudo apt upgrade
-        ubuntu-drivers devices
-        sudo ubuntu-drivers autoinstall
     - uses: Jimver/cuda-toolkit@v0.2.5
       id: cuda-toolkit
       with:

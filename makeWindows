@@ -1,9 +1,9 @@
 all:
 	cl /c src/main.cpp
-	nvcc -c src/lib.cu
-	nvcc -c test/tests.cu
-	nvcc main.obj lib.obj -o main
-	nvcc tests.obj lib.obj -o tests
+	nvcc --device-emulation -c src/lib.cu
+	nvcc --device-emulation -c test/tests.cu
+	nvcc --device-emulation main.obj lib.obj -o main
+	nvcc --device-emulation tests.obj lib.obj -o tests
 run_test:
 	./tests
 clean:

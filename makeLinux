@@ -1,9 +1,9 @@
 all:
-	nvcc -c src/lib.cu
-	nvcc -c test/tests.cu
+	nvcc --device-emulation -c src/lib.cu
+	nvcc --device-emulation -c test/tests.cu
 	g++ -c src/main.cpp
-	nvcc lib.o tests.o -o tests
-	nvcc main.o lib.o -o exe
+	nvcc --device-emulation lib.o tests.o -o tests
+	nvcc --device-emulation main.o lib.o -o exe
 run_test:
 	chmod +x exe
 	./tests

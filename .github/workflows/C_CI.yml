@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: check_gpu
-      run: sudo lspci | grep -i NVIDIA
+      run: sudo lspci

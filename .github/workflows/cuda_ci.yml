@@ -21,10 +21,8 @@ jobs:
 
     - name: install cuda
       env:
-        cuda: ${{ matrix.cuda }}
+        cuda: "11.3"
       run: |
-        env:
-          cuda: ${{ matrix.cuda }}
         chmod 777 scripts/actions/install_cuda_ubuntu.sh 
         ./scripts/actions/install_cuda_ubuntu.sh
       shell: bash 

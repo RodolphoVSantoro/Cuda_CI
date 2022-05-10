@@ -22,7 +22,9 @@ jobs:
     - name: install cuda
       env:
         cuda: ${{ matrix.cuda }}
-      run: ./scripts/actions/install_cuda_ubuntu.sh
+      run: |
+        chmod 777 /scripts/actions/install_cuda_ubuntu.sh 
+        ./scripts/actions/install_cuda_ubuntu.sh
       shell: bash 
     - name: vers
       run: nvcc -V

@@ -1,9 +1,9 @@
 all:
-	nvcc -deviceemu -c src/lib.cu
+	nvcc -c src/lib.cu
 	nvcc -deviceemu -c test/tests.cu
 	g++ -c src/main.cpp
-	nvcc -deviceemu lib.o tests.o -o tests
-	nvcc -deviceemu main.o lib.o -o exe
+	nvcc lib.o tests.o -o tests
+	nvcc main.o lib.o -o exe
 run_test:
 	chmod +x exe
 	./tests

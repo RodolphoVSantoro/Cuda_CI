@@ -23,7 +23,7 @@ jobs:
       env:
         cuda: ${{ matrix.cuda }}
       run: |
-        chmod 777 /scripts/actions/install_cuda_ubuntu.sh 
+        chmod 777 scripts/actions/install_cuda_ubuntu.sh 
         ./scripts/actions/install_cuda_ubuntu.sh
       shell: bash 
     - name: vers

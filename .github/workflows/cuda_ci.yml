@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest] 
+        os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v3
     - uses: ilammy/msvc-dev-cmd@v1
@@ -23,6 +23,8 @@ jobs:
       env:
         cuda: ${{ matrix.cuda }}
       run: |
+        env:
+          cuda: ${{ matrix.cuda }}
         chmod 777 scripts/actions/install_cuda_ubuntu.sh 
         ./scripts/actions/install_cuda_ubuntu.sh
       shell: bash 

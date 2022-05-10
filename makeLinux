@@ -1,6 +1,6 @@
 all:
 	nvcc -c src/lib.cu
-	nvcc -deviceemu -c test/tests.cu
+	nvcc -c test/tests.cu
 	g++ -c src/main.cpp
 	nvcc lib.o tests.o -o tests
 	nvcc main.o lib.o -o exe
